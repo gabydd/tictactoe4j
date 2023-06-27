@@ -43,7 +43,7 @@ public class Utils {
 				int errorCode = NetIO.sendRequest(Globals.NULL_STR +
 						Globals.REQUEST_TO_PLAY_GAME + "00" +
 						leftPad(NetIO.myUserName(), Globals.CLIENT_ID_LENGTH, '0') +
-						leftPad("1.1.1.1", Globals.MAX_IP_ADDRESS_LENGTH, '0') +
+						leftPad(NetIO.myIPAddress(), Globals.MAX_IP_ADDRESS_LENGTH, '0') +
 						Globals.NO_MESSAGE,
 						ClientTicTacToe.socket);
 				if (errorCode != Globals.NET_OK) {

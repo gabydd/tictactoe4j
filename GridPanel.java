@@ -42,7 +42,7 @@ public class GridPanel extends JPanel {
 				int errorCode = NetIO
 						.sendRequest(
 								"" + Globals.REQUEST_TO_PROCESS_PLAY + Integer.toString(row) + Integer.toString(col) + Utils.leftPad(Globals.user, 15, ' ')
-										+ Utils.leftPad("1.1.1.1", 15, ' ') + "null message",
+										+ Utils.leftPad(NetIO.myIPAddress(), 15, ' ') + "null message",
 								ClientTicTacToe.socket);
 				if (errorCode == Globals.NET_OK) {
 					setVal(Globals.iAmPlayer);

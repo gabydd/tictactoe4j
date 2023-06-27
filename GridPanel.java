@@ -41,7 +41,7 @@ public class GridPanel extends JPanel {
 			if (Globals.currentPlayer != Globals.NO_PLAYER && Globals.currentPlayer == Globals.iAmPlayer && !Globals.gameOver && val == Globals.NO_PLAYER) {
 				int errorCode = NetIO
 						.sendRequest(
-								"" + Globals.REQUEST_TO_PROCESS_PLAY + Integer.toString(row) + Integer.toString(col) + Utils.leftPad(Globals.user, 15, ' ')
+								"" + Globals.REQUEST_TO_PROCESS_PLAY + Integer.toString(row) + Integer.toString(col) + Utils.leftPad(NetIO.myUserName(), 15, ' ')
 										+ Utils.leftPad(NetIO.myIPAddress(), 15, ' ') + "null message",
 								ClientTicTacToe.socket);
 				if (errorCode == Globals.NET_OK) {

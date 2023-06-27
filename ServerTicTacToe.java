@@ -23,7 +23,7 @@ public class ServerTicTacToe {
 																		// displayed) + 4 extra lines for error messages
 	public static Console info = new Console(infoRows, 125);
 	public static Console results = new Console(30, 40, "Game Results"); // row, col, title
-	private static NodeInfo requestFromPlayer = new NodeInfo();
+	public static NodeInfo requestFromPlayer = new NodeInfo();
 	private static ServerSocket serverSocket;
 	public static GamesList games = new GamesList();
 
@@ -124,10 +124,9 @@ public class ServerTicTacToe {
 				} else {
 					// client sent an invalid request
 				}
-
-				requestFromPlayer = new NodeInfo();
 			} catch (IOException e) {
 			}
+			ServerTicTacToe.dumpInfo(ServerTicTacToe.games);
 		} while (true);
 	}
 
@@ -167,7 +166,9 @@ public class ServerTicTacToe {
 						else
 							info.print(" ");
 						info.print("Current : " + game.getCurrentPlayer());
-						info.print("                             Board: ");
+						if (game.next != null) {
+							info.print("                             Board: ");
+						}
 						break;
 
 					case 1:

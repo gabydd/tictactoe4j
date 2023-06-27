@@ -132,5 +132,4 @@ public class Globals {
     public static final int USER_CANCEL       = -101;
 
     public static final int OFFSET = 15;
-    public static String user = "123456789";
 }

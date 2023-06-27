@@ -61,6 +61,7 @@ public class Player extends Thread {
 			} else {
 				System.out.println(request);
 				NodeInfo requestFromPlayer = new NodeInfo(request);
+				ServerTicTacToe.requestFromPlayer = requestFromPlayer;
 				switch (requestFromPlayer.getCommand()) {
 					case Globals.REQUEST_TO_PROCESS_PLAY:
 						int row = Integer.parseInt(requestFromPlayer.getRowColPlayer().substring(0, 1));

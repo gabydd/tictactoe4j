@@ -38,8 +38,7 @@ public class GridPanel extends JPanel {
 
 	private class MoveListener extends MouseAdapter {
 		public void mousePressed(MouseEvent e) {
-			if (Globals.currentPlayer == Globals.iAmPlayer && !Globals.gameOver && val == Globals.NO_PLAYER) {
-		// int errorCode = NetIO.sendRequest("a", ClientTicTacToe.socket);
+			if (Globals.currentPlayer != Globals.NO_PLAYER && Globals.currentPlayer == Globals.iAmPlayer && !Globals.gameOver && val == Globals.NO_PLAYER) {
 				int errorCode = NetIO
 						.sendRequest(
 								"" + Globals.REQUEST_TO_PROCESS_PLAY + Integer.toString(row) + Integer.toString(col) + Utils.leftPad(Globals.user, 15, ' ')

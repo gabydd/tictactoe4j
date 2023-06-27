@@ -117,7 +117,7 @@ public class Player extends Thread {
 									Utils.leftPad(NetIO.myIPAddress(), Globals.MAX_IP_ADDRESS_LENGTH, '0') +
 									message,
 									game.getSocket(1));
-							ServerTicTacToe.dumpGameInResultsWindow(ServerTicTacToe.games, currentGame);
+							ServerTicTacToe.dumpGameInResultsWindow(game, currentGame);
 							gameOver = true;
 							try {
 								game.getSocket(1 - whichPlayer).close();
@@ -172,7 +172,8 @@ public class Player extends Thread {
 				ServerTicTacToe.dumpInfo(ServerTicTacToe.games);
 			}
 		}
-		ServerTicTacToe.games[currentGame] = new Game(currentGame);
+		GamesList games = ServerTicTacToe.games;
+		if (game == games.tail || game == games.head || game.next != null) ServerTicTacToe.games.remove(game);
 		System.out.println("Done running");
 	}
 

@@ -8,6 +8,8 @@ public class Game {
 	private int currentPlayer = Globals.NO_PLAYER;
 	private int[][] matrix = new int[Globals.ROWS][Globals.COLS];
 	private Player[] players = new Player[Globals.PAIR_OF_PLAYERS];
+	public Game next;
+	public Game pre;
 
 	public Game(int currentGame) {
 		ipAddresses[0] = Globals.NULL_STR;

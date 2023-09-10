@@ -1,9 +1,10 @@
 public class NodeInfo {
-    private char command = ' ';
+    private char command = 0;
     private String rowColPlayer = "";
     private String username = "";
     private String ipAddress = "";
     private String message = "";
+	public NodeInfo pre = null;
 
     public static void main(String[] args) {
 	System.out.println(new NodeInfo(

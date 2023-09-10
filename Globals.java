@@ -102,6 +102,7 @@ public class Globals {
     public static final char COMMAND_GAME_OVER       = 239; // server to client
     public static final char COMMAND_DISPLAY_MESSAGE = 238; // server to client
     public static final char REQUEST_TO_DISCONNECT   = COMMAND_GAME_TERMINATE; // client to server
+    public static final char REQUEST_NET_OK          = 0; // client to server
     
     // request structure as a string
     // null string + command + row  + column + identification
